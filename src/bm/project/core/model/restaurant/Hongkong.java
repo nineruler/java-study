@@ -8,7 +8,9 @@ import java.util.ArrayList;
 public class Hongkong extends Restaurant{
     ArrayList<Menu> HongkongMenus = new ArrayList<>();
 
-    public Hongkong(){ }
+    public Hongkong(){
+
+    }
 
     public Hongkong(RestaurantInfo info){
         this.restaurantInfo = info;

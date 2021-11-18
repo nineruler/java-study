@@ -11,7 +11,9 @@ public class Saemaul extends Restaurant {
     ArrayList<Menu>  MealMenus = new ArrayList<>();
     ArrayList<Category> SaemaulMenuList = new ArrayList<>();
 
-    public Saemaul(){ }
+    public Saemaul(){
+
+    }
 
     public Saemaul(RestaurantInfo restaurantInfo){
         this.restaurantInfo = restaurantInfo;
@@ -73,14 +75,17 @@ public class Saemaul extends Restaurant {
         System.out.println("새마을 식당 메뉴판");
 
         for (Category category : SaemaulMenuList) {
+
             System.out.printf("%d.%S%n", category.CategoryNo, category.CategoryName);
 
             for (Menu menu : category.MenuList)
             {
                 System.out.printf("%d.%d.%S : %d원%n", category.CategoryNo, menu.No, menu.Name, menu.Price);
             }
+
             System.out.println();
         }
+
         System.out.println();
     }
 }

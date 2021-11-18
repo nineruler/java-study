@@ -7,7 +7,9 @@ public class Category {
     public String CategoryName;
     public List<Menu> MenuList;
 
-    public Category(){};
+    public Category(){
+
+    }
 
     public Category(int categoryNo, String categoryName, List<Menu> menuList){
         this.CategoryNo = categoryNo;
