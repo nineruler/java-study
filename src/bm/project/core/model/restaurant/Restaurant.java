@@ -172,7 +172,8 @@ public class Restaurant {
             System.out.println("주문시간 : " + order.OrderDate.format(DateTimeFormatter.ofPattern("yy년 MM월 dd일 HH:mm:ss")));
 
             for (OrderMenu orderMenu : order.OrderMenus) {
-                System.out.println(orderMenu.Menu + " " + orderMenu.Count);
+                System.out.println(orderMenu.Menu + " " + orderMenu.Count
+                +" "+ (orderMenu.isCompleted ? "완료" : "미완료"));
                 totalPrice += orderMenu.MenuPrice;
             }
         }

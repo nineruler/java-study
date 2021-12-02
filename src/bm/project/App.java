@@ -34,46 +34,34 @@ public class App {
         saemaul.createOrder(orderMenus2);
 
         saemaul.setTable(1, saemaul.getOrder(1));
-        saemaul.completeOrder(1);
-        saemaul.addTableOrder(1, saemaul.getOrder(2));
+//        saemaul.completeOrder(1);
+//        saemaul.addTableOrder(1, saemaul.getOrder(2));
         saemaul.printTableInfo(1);
 
         //홍콩반점
-        Hongkong hongkong = new Hongkong(new RestaurantInfo("홍콩반점","수원시 무지개로124","123-5678","10:00","23:00"));
-
-        hongkong.initialize();
-        ArrayList<Menu> hongkongMenus = hongkong.getHongkongMenus();
-
-        hongkong.printMenu();
-
-        List<OrderMenu> hongkongOrderMenus = new ArrayList<>();
-        hongkongOrderMenus.add(new OrderMenu(hongkongMenus.get(0), 1));
-        hongkongOrderMenus.add(new OrderMenu(hongkongMenus.get(1), 2));
-
-        hongkong.createOrder(hongkongOrderMenus);
-
-        List<OrderMenu> hongkongOrderMenus2 = new ArrayList<>();
-        hongkongOrderMenus2.add(new OrderMenu(hongkongMenus.get(2),2));
-        hongkongOrderMenus2.add(new OrderMenu(hongkongMenus.get(0),1));
-        hongkongOrderMenus2.add(new OrderMenu(hongkongMenus.get(10),1));
-
-        hongkong.createOrder(hongkongOrderMenus2);
-
-        System.out.println(hongkong.getOrder(1));
-        System.out.println(hongkong.getOrder(2));
-
-//        List<OrderMenu> changeMenu = new ArrayList<>();
-//        changeMenu.add(new OrderMenu(hongkongMenus.get(2),2));
-//        changeMenu.add(new OrderMenu(hongkongMenus.get(3),1));
+//        Hongkong hongkong = new Hongkong(new RestaurantInfo("홍콩반점","수원시 무지개로124","123-5678","10:00","23:00"));
 //
-//        hongkong.changeOrder(1,changeMenu);
-
-//        hongkong.setTable(1,hongkong.getOrder(1));
-//        hongkong.addTableOrder(1,hongkong.getOrder(2));
-//        hongkong.printTableInfo(1);
+//        hongkong.initialize();
+//        ArrayList<Menu> hongkongMenus = hongkong.getHongkongMenus();
 //
-//        hongkong.completeOrder(1);
-//        hongkong.removeTableOrder(1,1);
-//        hongkong.printTableInfo(1);
+//        hongkong.printMenu();
+//
+//        List<OrderMenu> hongkongOrderMenus = new ArrayList<>();
+//        hongkongOrderMenus.add(new OrderMenu(hongkongMenus.get(0), 1));
+//        hongkongOrderMenus.add(new OrderMenu(hongkongMenus.get(1), 2));
+//
+//        hongkong.createOrder(hongkongOrderMenus);
+//
+//        List<OrderMenu> hongkongOrderMenus2 = new ArrayList<>();
+//        hongkongOrderMenus2.add(new OrderMenu(hongkongMenus.get(2),2));
+//        hongkongOrderMenus2.add(new OrderMenu(hongkongMenus.get(0),1));
+//        hongkongOrderMenus2.add(new OrderMenu(hongkongMenus.get(10),1));
+//
+//        hongkong.createOrder(hongkongOrderMenus2);
+//
+//        hongkong.setTable(1, hongkong.getOrder(0));
+//        hongkong.setTable(2, hongkong.getOrder(1));
+//
+//        hongkong.printTableInfo(0);
     }
 }
