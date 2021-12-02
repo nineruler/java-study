@@ -10,7 +10,8 @@ public class Order {
     public int OrderNo;
     public List<OrderMenu> OrderMenus;
     public LocalDateTime OrderDate;
-    public boolean isCompleted = false;
+    public boolean isMenuCompleted = false;
+    public boolean isServingCompleted = false;
 
     public Order(){
         OrderMenus =  new ArrayList<>();
@@ -24,10 +25,10 @@ public class Order {
 
     public boolean getOrderCompleted() {
         for(OrderMenu menu : OrderMenus){
-            isCompleted = isCompleted && menu.isCompleted;
+            isMenuCompleted = isMenuCompleted && menu.isMenuCompleted;
         }
 
-        return isCompleted;
+        return isMenuCompleted;
     }
 
     @Override
@@ -35,7 +36,7 @@ public class Order {
         return "Order{" +
                 "OrderMenus=" + OrderMenus.toString() +
                 ", OrderDate='" + OrderDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")) + '\'' +
-                "Completed=" + isCompleted +
+                "Completed=" + isMenuCompleted +
                 '}';
     }
 }

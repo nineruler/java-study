@@ -37,6 +37,8 @@ public class App {
 
         saemaul.completeMenu(1,1);
         saemaul.completeMenu(1,2);
+        saemaul.serveMenu(1,1);
+        saemaul.serveMenu(1,2);
 //        saemaul.completeOrder(1);
 //        saemaul.addTableOrder(1, saemaul.getOrder(2));
         saemaul.printTableInfo(1);

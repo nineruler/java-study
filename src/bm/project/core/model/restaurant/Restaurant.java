@@ -85,14 +85,29 @@ public class Restaurant {
         Order order = orderMap.get(orderNo);
         List<OrderMenu> orderMenus = order.OrderMenus;
         OrderMenu orderMenu = orderMenus.get(menuNo-1);
-        orderMenu.isCompleted  = true;
+        orderMenu.isMenuCompleted  = true;
         orderMenus.set(menuNo-1, orderMenu);
 
         int CountCompleted = 0;
         for(OrderMenu ordermenu : orderMenus) {
-            if(ordermenu.isCompleted) CountCompleted++;
+            if(ordermenu.isMenuCompleted) CountCompleted++;
         }
-        if(orderMenus.size() == CountCompleted) order.isCompleted = true;
+        if(orderMenus.size() == CountCompleted) order.isMenuCompleted = true;
+        orderMap.put(orderNo,order);
+    }
+
+    public void serveMenu(int orderNo, int menuNo){
+        Order order = orderMap.get(orderNo);
+        List<OrderMenu> orderMenus = order.OrderMenus;
+        OrderMenu orderMenu = orderMenus.get(menuNo-1);
+        orderMenu.isServingCompleted  = true;
+        orderMenus.set(menuNo-1, orderMenu);
+
+        int CountCompleted = 0;
+        for(OrderMenu ordermenu : orderMenus) {
+            if(ordermenu.isServingCompleted) CountCompleted++;
+        }
+        if(orderMenus.size() == CountCompleted) order.isServingCompleted = true;
         orderMap.put(orderNo,order);
     }
 
@@ -173,22 +188,15 @@ public class Restaurant {
         System.out.println("주문내역");
 
         for (Order order : table.Orders) {
-            System.out.print("No" + order.OrderNo);
-            // 삼항연산자
-            // System.out.print("No" + order.OrderNo + (order.Completed ? " 완료" : " 미완료"));
-
-            if (order.isCompleted) {
-                System.out.println(" 완료");
-            }
-            else {
-                System.out.println(" 미완료");
-            }
+            System.out.println("No" + order.OrderNo +"\n"+ (order.isMenuCompleted ? "요리 완료" : "요리 미완료")
+            +" & "+(order.isServingCompleted ? "서빙 완료" : "서빙 미완료"));
 
             System.out.println("주문시간 : " + order.OrderDate.format(DateTimeFormatter.ofPattern("yy년 MM월 dd일 HH:mm:ss")));
 
             for (OrderMenu orderMenu : order.OrderMenus) {
                 System.out.println(orderMenu.Menu + " " + orderMenu.Count
-                +" "+ (orderMenu.isCompleted ? "완료" : "미완료"));
+                +" & "+ (orderMenu.isMenuCompleted ? "요리 완료" : "요리 미완료")+
+                " & " + (orderMenu.isServingCompleted ? "서빙 완료" : "서빙 미완료"));
                 totalPrice += orderMenu.MenuPrice;
             }
         }

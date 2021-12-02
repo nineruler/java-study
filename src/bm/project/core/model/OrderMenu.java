@@ -4,7 +4,9 @@ public class OrderMenu {
     public Menu Menu;
     public int Count;
     public int MenuPrice;
-    public boolean isCompleted = false;
+    public boolean isMenuCompleted = false;
+    public boolean isServingCompleted = false;
+
 
     public OrderMenu(Menu menu, int count){
         this.Menu = menu;
@@ -13,7 +15,7 @@ public class OrderMenu {
     }
 
     public void completeOrderMenu(){
-        isCompleted = true;
+        isMenuCompleted = true;
     }
 
     @Override
