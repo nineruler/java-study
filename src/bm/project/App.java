@@ -34,6 +34,9 @@ public class App {
         saemaul.createOrder(orderMenus2);
 
         saemaul.setTable(1, saemaul.getOrder(1));
+
+        saemaul.completeMenu(1,1);
+        saemaul.completeMenu(1,2);
 //        saemaul.completeOrder(1);
 //        saemaul.addTableOrder(1, saemaul.getOrder(2));
         saemaul.printTableInfo(1);

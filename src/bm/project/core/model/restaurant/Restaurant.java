@@ -72,15 +72,30 @@ public class Restaurant {
     }
 
     //주문 완료
-    public void completeOrder(int orderNo) {
+//    public void completeOrder(int orderNo) {
+//        Order order = orderMap.get(orderNo);
+//        order.isCompleted = true;
+//
+//        orderMap.put(orderNo, order);
+//
+//        System.out.println("주문번호" + orderNo + " 완성되었습니다.");
+//        System.out.println(orderMap.get(orderNo));
+//    }
+    public void completeMenu(int orderNo, int menuNo){
         Order order = orderMap.get(orderNo);
-        order.isCompleted = true;
+        List<OrderMenu> orderMenus = order.OrderMenus;
+        OrderMenu orderMenu = orderMenus.get(menuNo-1);
+        orderMenu.isCompleted  = true;
+        orderMenus.set(menuNo-1, orderMenu);
 
-        orderMap.put(orderNo, order);
-
-        System.out.println("주문번호" + orderNo + " 완성되었습니다.");
-        System.out.println(orderMap.get(orderNo));
+        int CountCompleted = 0;
+        for(OrderMenu ordermenu : orderMenus) {
+            if(ordermenu.isCompleted) CountCompleted++;
+        }
+        if(orderMenus.size() == CountCompleted) order.isCompleted = true;
+        orderMap.put(orderNo,order);
     }
+
 
     //레스토랑 정보 세팅
     public void setRestaurantInfo(RestaurantInfo restaurantInfo) {
