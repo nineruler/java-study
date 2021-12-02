@@ -38,18 +38,22 @@ public class Restaurant {
         category = new Category(categoryNo, categoryName, menus);
     }
 
+    //카테고리 가져오기
     public Category getCategory() {
         return category;
     }
 
+    //카테고리 메뉴 가져오기
     public List<Category> getMenu() {
         return menuCategoryList;
     }
 
+    //메뉴 프린트
     public void printMenu() {
 
     }
 
+    //주문 생성
     public Order createOrder(List<OrderMenu> orderMenus) {
         Order order = new Order(orderMenus, orderNo++);
         orderMap.put(order.OrderNo, order);
@@ -57,14 +61,17 @@ public class Restaurant {
         return order;
     }
 
+    //주문 가져오기
     public Order getOrder(int orderNo) {
         return orderMap.get(orderNo);
     }
 
+    //주문 추가
     public void addOrder() {
 
     }
 
+    //주문 완료
     public void completeOrder(int orderNo) {
         Order order = orderMap.get(orderNo);
         order.isCompleted = true;
@@ -75,21 +82,26 @@ public class Restaurant {
         System.out.println(orderMap.get(orderNo));
     }
 
+    //레스토랑 정보 세팅
     public void setRestaurantInfo(RestaurantInfo restaurantInfo) {
         this.restaurantInfo = restaurantInfo;
     }
 
+    //레스토랑 정보 가져오기
     public RestaurantInfo getRestaurantInfo() {
         return restaurantInfo;
     }
 
+    //주문 취소
     public void removeOrder(int orderNo) {
         orderMap.remove(orderNo);
     }
 
+    //주문 변경
     public Order changeOrder(int orderNo, List<OrderMenu> orderMenus) {
         Order order = orderMap.get(orderNo);
         order.OrderMenus = orderMenus;
+        orderMap.put(orderNo, order);
 
         System.out.println("주문이 변경되었습니다.");
         System.out.println("변경내역 : " + order.OrderMenus);
@@ -97,6 +109,7 @@ public class Restaurant {
         return order;
     }
 
+    //테이블 세팅
     public void setTable(int tableNo, Order order) {
         List<Order> orders = new ArrayList<>();
         orders.add(order);
@@ -112,26 +125,31 @@ public class Restaurant {
         System.out.println("남은 테이블 수 : " + getRemainTable());
     }
 
+    //현재 잔여 테이블 수
     public int getRemainTable() {
         return tableMaxCount - tableMap.size();
     }
 
+    //테이블에 주문 추가
     public void addTableOrder(int tableNo, Order order) {
         Table table = tableMap.get(tableNo);
         table.Orders.add(order);
         tableMap.put(tableNo, table);
     }
 
+    //테이블 주문 취소
     public void removeTableOrder(int tableNo, int orderNo) {
         Table table = tableMap.get(tableNo);
         System.out.println("테이블 No" + tableNo + "의 주문 " + table.Orders.get(orderNo) + "가 취소되었습니다.");
         table.Orders.remove(orderNo);
     }
 
+    //테이블 가져오기
     public Table getTable() {
         return table;
     }
 
+    //테이블 정보 프린트
     public void printTableInfo(int tableNo) {
         int totalPrice = 0;
         Table table = tableMap.get(tableNo);

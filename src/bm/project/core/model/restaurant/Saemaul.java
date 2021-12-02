@@ -44,26 +44,32 @@ public class Saemaul extends Restaurant {
         SaemaulMenuList.add(getCategory());
     }
 
+    // 고기류에 메뉴 추가
     public void setMeatMenus(Menu menu){
         MeatMenus.add(menu);
     }
 
+    // 고기류 메뉴 가져오기
     public ArrayList<Menu> getMeatMenus(){
         return MeatMenus;
     }
 
+    // 식사류에 메뉴 추가
     public void setMealMenus(Menu menu){
         MealMenus.add(menu);
     }
 
+    // 식사류 메뉴 가져오기
     public ArrayList<Menu> getMealMenus(){
         return MealMenus;
     }
 
+    // 카테고리 추가
     public void setSaemaulMenu(Category category){
         SaemaulMenuList.add(category);
     }
 
+    //카테고리 가져오기
     public ArrayList<Category> getSaemaulMenu(){
         return SaemaulMenuList;
     }

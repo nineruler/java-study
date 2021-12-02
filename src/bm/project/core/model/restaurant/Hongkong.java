@@ -16,6 +16,7 @@ public class Hongkong extends Restaurant{
         this.restaurantInfo = info;
     }
 
+    //초기설정
     public void initialize(){
         HongkongMenus.add(new Menu(HongkongMenus.size() + 1, "짜장면", 4500));
         HongkongMenus.add(new Menu(HongkongMenus.size() + 1, "짜장면곱빼기", 5500));
@@ -33,10 +34,12 @@ public class Hongkong extends Restaurant{
         HongkongMenus.add(new Menu(HongkongMenus.size() + 1, "깐풍기 대", 18000));
     }
 
+    //홍콩반점 메뉴 추가
     public void setHokongMenu(Menu menu){
         HongkongMenus.add(menu);
     }
 
+    //홍콩반점 메뉴 가져오기
     public ArrayList<Menu> getHongkongMenus(){
         return HongkongMenus;
     }
