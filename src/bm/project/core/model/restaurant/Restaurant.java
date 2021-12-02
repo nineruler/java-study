@@ -96,6 +96,7 @@ public class Restaurant {
         orderMap.put(orderNo,order);
     }
 
+    //메뉴 서빙여부
     public void serveMenu(int orderNo, int menuNo){
         Order order = orderMap.get(orderNo);
         List<OrderMenu> orderMenus = order.OrderMenus;

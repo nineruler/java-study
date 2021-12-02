@@ -44,6 +44,7 @@ public class Hongkong extends Restaurant{
         return HongkongMenus;
     }
 
+    //홍콩반점 메뉴 프린트
     public void printMenu(){
         super.printMenu();
 
