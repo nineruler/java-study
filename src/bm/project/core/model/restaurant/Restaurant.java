@@ -189,14 +189,14 @@ public class Restaurant {
         System.out.println("주문내역");
 
         for (Order order : table.Orders) {
-            System.out.println("No" + order.OrderNo +"\n"+ (order.isMenuCompleted ? "요리 완료" : "요리 미완료")
+            System.out.println("No" + order.OrderNo +"\n"+ (order.isMenuCompleted ? "조리 완료" : "조리 미완료")
             +" & "+(order.isServingCompleted ? "서빙 완료" : "서빙 미완료"));
 
             System.out.println("주문시간 : " + order.OrderDate.format(DateTimeFormatter.ofPattern("yy년 MM월 dd일 HH:mm:ss")));
 
             for (OrderMenu orderMenu : order.OrderMenus) {
                 System.out.println(orderMenu.Menu + " " + orderMenu.Count
-                +" & "+ (orderMenu.isMenuCompleted ? "요리 완료" : "요리 미완료")+
+                +" & "+ (orderMenu.isMenuCompleted ? "조리 완료" : "조리 미완료")+
                 " & " + (orderMenu.isServingCompleted ? "서빙 완료" : "서빙 미완료"));
                 totalPrice += orderMenu.MenuPrice;
             }
