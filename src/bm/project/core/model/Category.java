@@ -8,7 +8,6 @@ public class Category {
     public List<Menu> MenuList;
 
     public Category(){
-
     }
 
     public Category(int categoryNo, String categoryName, List<Menu> menuList){
