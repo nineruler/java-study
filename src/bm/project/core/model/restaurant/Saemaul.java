@@ -6,20 +6,43 @@ import bm.project.core.model.RestaurantInfo;
 
 import java.util.ArrayList;
 
+/**
+ * The type Saemaul.
+ */
 public class Saemaul extends Restaurant {
+    /**
+     * The Meat menus.
+     */
     ArrayList<Menu> MeatMenus = new ArrayList<>();
+    /**
+     * The Meal menus.
+     */
     ArrayList<Menu>  MealMenus = new ArrayList<>();
+    /**
+     * The Saemaul menu list.
+     */
     ArrayList<Category> SaemaulMenuList = new ArrayList<>();
 
+    /**
+     * Instantiates a new Saemaul.
+     */
     public Saemaul(){
 
     }
 
+    /**
+     * Instantiates a new Saemaul.
+     *
+     * @param restaurantInfo the restaurant info
+     */
     public Saemaul(RestaurantInfo restaurantInfo){
         this.restaurantInfo = restaurantInfo;
     }
 
-    // 초기화
+    /**
+     * Initialize.
+     */
+// 초기화
     public void initialize(){
         MeatMenus.add(new Menu(MeatMenus.size() + 1, "열탄불고기", 9000));
         MeatMenus.add(new Menu(MeatMenus.size() + 1, "새마을불고기", 9000));
@@ -44,32 +67,62 @@ public class Saemaul extends Restaurant {
         SaemaulMenuList.add(getCategory());
     }
 
-    // 고기류에 메뉴 추가
+    /**
+     * Set meat menus.
+     *
+     * @param menu the menu
+     */
+// 고기류에 메뉴 추가
     public void setMeatMenus(Menu menu){
         MeatMenus.add(menu);
     }
 
-    // 고기류 메뉴 가져오기
+    /**
+     * Get meat menus array list.
+     *
+     * @return the array list
+     */
+// 고기류 메뉴 가져오기
     public ArrayList<Menu> getMeatMenus(){
         return MeatMenus;
     }
 
-    // 식사류에 메뉴 추가
+    /**
+     * Set meal menus.
+     *
+     * @param menu the menu
+     */
+// 식사류에 메뉴 추가
     public void setMealMenus(Menu menu){
         MealMenus.add(menu);
     }
 
-    // 식사류 메뉴 가져오기
+    /**
+     * Get meal menus array list.
+     *
+     * @return the array list
+     */
+// 식사류 메뉴 가져오기
     public ArrayList<Menu> getMealMenus(){
         return MealMenus;
     }
 
-    // 카테고리 추가
+    /**
+     * Set saemaul menu.
+     *
+     * @param category the category
+     */
+// 카테고리 추가
     public void setSaemaulMenu(Category category){
         SaemaulMenuList.add(category);
     }
 
-    //카테고리 가져오기
+    /**
+     * Get saemaul menu array list.
+     *
+     * @return the array list
+     */
+//카테고리 가져오기
     public ArrayList<Category> getSaemaulMenu(){
         return SaemaulMenuList;
     }

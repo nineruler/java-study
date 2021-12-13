@@ -2,11 +2,29 @@ package bm.project.core.model;
 
 import java.time.LocalTime;
 
+/**
+ * The type Hours.
+ */
 public class Hours {
+    /**
+     * The Open.
+     */
     public LocalTime Open;
+    /**
+     * The Close.
+     */
     public LocalTime Close;
+    /**
+     * The Is opened.
+     */
     public boolean isOpened;
 
+    /**
+     * Instantiates a new Hours.
+     *
+     * @param open  the open
+     * @param close the close
+     */
     public Hours(String open, String close){
         this.Open = LocalTime.parse(open);
         this.Close = LocalTime.parse(close);

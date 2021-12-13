@@ -7,53 +7,123 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * The type Restaurant.
+ */
 public class Restaurant {
+    /**
+     * The Menu list.
+     */
     ArrayList<Menu> menuList = new ArrayList<>();               // 메뉴판
+    /**
+     * The Order map.
+     */
     HashMap<Integer, Order> orderMap = new HashMap<>();         // 주문
+    /**
+     * The Restaurant info.
+     */
     RestaurantInfo restaurantInfo = new RestaurantInfo();       // 식당정보
+    /**
+     * The Menu category list.
+     */
     ArrayList<Category> menuCategoryList = new ArrayList<>();   // 메뉴 카테고리
+    /**
+     * The Category.
+     */
     Category category = new Category();                         // 카테고리
+    /**
+     * The Table map.
+     */
     HashMap<Integer, Table> tableMap = new HashMap<>();         // 테이블
+    /**
+     * The Table.
+     */
     Table table = new Table();                                  // 테이블 객체
+    /**
+     * The Order no.
+     */
     int orderNo = 1;                                            // 주문번호
+    /**
+     * The Table max count.
+     */
     int tableMaxCount = 10;                                     // 전체 테이블 수
 
+    /**
+     * Instantiates a new Restaurant.
+     */
     public Restaurant() {
 
     }
 
-    // 생성자
+    /**
+     * Instantiates a new Restaurant.
+     *
+     * @param info  the info
+     * @param menus the menus
+     */
+// 생성자
     public Restaurant(RestaurantInfo info, ArrayList<Menu> menus) {
         menuList = menus;
         restaurantInfo = info;
     }
 
-    // 메뉴 세팅
+    /**
+     * Sets menu.
+     *
+     * @param menus the menus
+     */
+// 메뉴 세팅
     public void setMenu(ArrayList<Menu> menus) {
         menuList = menus;
     }
 
-    // 카테고리 세팅
+    /**
+     * Sets category.
+     *
+     * @param categoryNo   the category no
+     * @param categoryName the category name
+     * @param menus        the menus
+     */
+// 카테고리 세팅
     public void setCategory(int categoryNo, String categoryName, ArrayList<Menu> menus) {
         category = new Category(categoryNo, categoryName, menus);
     }
 
-    //카테고리 가져오기
+    /**
+     * Gets category.
+     *
+     * @return the category
+     */
+//카테고리 가져오기
     public Category getCategory() {
         return category;
     }
 
-    //카테고리 메뉴 가져오기
+    /**
+     * Gets menu.
+     *
+     * @return the menu
+     */
+//카테고리 메뉴 가져오기
     public List<Category> getMenu() {
         return menuCategoryList;
     }
 
-    //메뉴 프린트
+    /**
+     * Print menu.
+     */
+//메뉴 프린트
     public void printMenu() {
 
     }
 
-    //주문 생성
+    /**
+     * Create order order.
+     *
+     * @param orderMenus the order menus
+     * @return the order
+     */
+//주문 생성
     public Order createOrder(List<OrderMenu> orderMenus) {
         Order order = new Order(orderMenus, orderNo++);
         orderMap.put(order.OrderNo, order);
@@ -61,17 +131,32 @@ public class Restaurant {
         return order;
     }
 
-    //주문 가져오기
+    /**
+     * Gets order.
+     *
+     * @param orderNo the order no
+     * @return the order
+     */
+//주문 가져오기
     public Order getOrder(int orderNo) {
         return orderMap.get(orderNo);
     }
 
-    //주문 추가
+    /**
+     * Add order.
+     */
+//주문 추가
     public void addOrder() {
 
     }
 
-    //주문 완료
+    /**
+     * Complete menu.
+     *
+     * @param orderNo the order no
+     * @param menuNo  the menu no
+     */
+//주문 완료
 //    public void completeOrder(int orderNo) {
 //        Order order = orderMap.get(orderNo);
 //        order.isCompleted = true;
@@ -96,7 +181,13 @@ public class Restaurant {
         orderMap.put(orderNo,order);
     }
 
-    //메뉴 서빙여부
+    /**
+     * Serve menu.
+     *
+     * @param orderNo the order no
+     * @param menuNo  the menu no
+     */
+//메뉴 서빙여부
     public void serveMenu(int orderNo, int menuNo){
         Order order = orderMap.get(orderNo);
         List<OrderMenu> orderMenus = order.OrderMenus;
@@ -113,22 +204,44 @@ public class Restaurant {
     }
 
 
-    //레스토랑 정보 세팅
+    /**
+     * Sets restaurant info.
+     *
+     * @param restaurantInfo the restaurant info
+     */
+//레스토랑 정보 세팅
     public void setRestaurantInfo(RestaurantInfo restaurantInfo) {
         this.restaurantInfo = restaurantInfo;
     }
 
-    //레스토랑 정보 가져오기
+    /**
+     * Gets restaurant info.
+     *
+     * @return the restaurant info
+     */
+//레스토랑 정보 가져오기
     public RestaurantInfo getRestaurantInfo() {
         return restaurantInfo;
     }
 
-    //주문 취소
+    /**
+     * Remove order.
+     *
+     * @param orderNo the order no
+     */
+//주문 취소
     public void removeOrder(int orderNo) {
         orderMap.remove(orderNo);
     }
 
-    //주문 변경
+    /**
+     * Change order order.
+     *
+     * @param orderNo    the order no
+     * @param orderMenus the order menus
+     * @return the order
+     */
+//주문 변경
     public Order changeOrder(int orderNo, List<OrderMenu> orderMenus) {
         Order order = orderMap.get(orderNo);
         order.OrderMenus = orderMenus;
@@ -140,7 +253,13 @@ public class Restaurant {
         return order;
     }
 
-    //테이블 세팅
+    /**
+     * Sets table.
+     *
+     * @param tableNo the table no
+     * @param order   the order
+     */
+//테이블 세팅
     public void setTable(int tableNo, Order order) {
         List<Order> orders = new ArrayList<>();
         orders.add(order);
@@ -156,31 +275,58 @@ public class Restaurant {
         System.out.println("남은 테이블 수 : " + getRemainTable());
     }
 
-    //현재 잔여 테이블 수
+    /**
+     * Gets remain table.
+     *
+     * @return the remain table
+     */
+//현재 잔여 테이블 수
     public int getRemainTable() {
         return tableMaxCount - tableMap.size();
     }
 
-    //테이블에 주문 추가
+    /**
+     * Add table order.
+     *
+     * @param tableNo the table no
+     * @param order   the order
+     */
+//테이블에 주문 추가
     public void addTableOrder(int tableNo, Order order) {
         Table table = tableMap.get(tableNo);
         table.Orders.add(order);
         tableMap.put(tableNo, table);
     }
 
-    //테이블 주문 취소
+    /**
+     * Remove table order.
+     *
+     * @param tableNo the table no
+     * @param orderNo the order no
+     */
+//테이블 주문 취소
     public void removeTableOrder(int tableNo, int orderNo) {
         Table table = tableMap.get(tableNo);
         System.out.println("테이블 No" + tableNo + "의 주문 " + table.Orders.get(orderNo) + "가 취소되었습니다.");
         table.Orders.remove(orderNo);
     }
 
-    //테이블 가져오기
+    /**
+     * Gets table.
+     *
+     * @return the table
+     */
+//테이블 가져오기
     public Table getTable() {
         return table;
     }
 
-    //테이블 정보 프린트
+    /**
+     * Print table info.
+     *
+     * @param tableNo the table no
+     */
+//테이블 정보 프린트
     public void printTableInfo(int tableNo) {
         int totalPrice = 0;
         Table table = tableMap.get(tableNo);
@@ -205,7 +351,9 @@ public class Restaurant {
         System.out.println("총 금액 : " + totalPrice);
     }
 
-    @Override
+    //번호표 출력 만들기기
+
+   @Override
     public String toString() {
         return "Restaurant{" +
                 "restaurantInfo=" + restaurantInfo +
