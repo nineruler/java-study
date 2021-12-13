@@ -10,28 +10,28 @@ import java.util.ArrayList;
  */
 public class Hongkong extends Restaurant{
     /**
-     * The Hongkong menus.
+     * 홍콩반점 메뉴 리스트
      */
     ArrayList<Menu> HongkongMenus = new ArrayList<>();
 
     /**
-     * Instantiates a new Hongkong.
+     * 생성자
      */
     public Hongkong(){
 
     }
 
     /**
-     * Instantiates a new Hongkong.
+     * 생성자
      *
-     * @param info the info
+     * @param info 홍콩반점 정보
      */
     public Hongkong(RestaurantInfo info){
         this.restaurantInfo = info;
     }
 
     /**
-     * Initialize.
+     * 초기화
      */
 //초기설정
     public void initialize(){
@@ -52,26 +52,25 @@ public class Hongkong extends Restaurant{
     }
 
     /**
-     * Set hokong menu.
+     * 홍콩반점 메뉴 추가
      *
-     * @param menu the menu
+     * @param menu 추가할 메뉴
      */
-//홍콩반점 메뉴 추가
     public void setHokongMenu(Menu menu){
         HongkongMenus.add(menu);
     }
 
     /**
-     * Get hongkong menus array list.
+     * 홍콩반점 메뉴 가져오기
      *
-     * @return the array list
+     * @return 홍콩반점 메뉴
      */
-//홍콩반점 메뉴 가져오기
     public ArrayList<Menu> getHongkongMenus(){
         return HongkongMenus;
     }
-
-    //홍콩반점 메뉴 프린트
+    /**
+     * 홍콩반점 메뉴 출력
+     */
     public void printMenu(){
         super.printMenu();
 

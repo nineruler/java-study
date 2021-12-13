@@ -7,23 +7,23 @@ import java.time.LocalTime;
  */
 public class Hours {
     /**
-     * The Open.
+     * 오픈시간
      */
     public LocalTime Open;
     /**
-     * The Close.
+     * 마감시간
      */
     public LocalTime Close;
     /**
-     * The Is opened.
+     * 오픈 여부
      */
     public boolean isOpened;
 
     /**
-     * Instantiates a new Hours.
+     * 생성자
      *
-     * @param open  the open
-     * @param close the close
+     * @param open  오픈시간
+     * @param close 마감시간
      */
     public Hours(String open, String close){
         this.Open = LocalTime.parse(open);

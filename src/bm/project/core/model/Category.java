@@ -7,30 +7,30 @@ import java.util.List;
  */
 public class Category {
     /**
-     * The Category no.
+     * 카테고리 번호
      */
     public int CategoryNo;
     /**
-     * The Category name.
+     * 카테고리 이름
      */
     public String CategoryName;
     /**
-     * The Menu list.
+     * 메뉴 리스트
      */
     public List<Menu> MenuList;
 
     /**
-     * Instantiates a new Category.
+     * 생성자
      */
     public Category(){
     }
 
     /**
-     * Instantiates a new Category.
+     * 생성자
      *
-     * @param categoryNo   the category no
-     * @param categoryName the category name
-     * @param menuList     the menu list
+     * @param categoryNo   카테고리 번호
+     * @param categoryName 카테고리 이름
+     * @param menuList     메뉴 리스트
      */
     public Category(int categoryNo, String categoryName, List<Menu> menuList){
         this.CategoryNo = categoryNo;

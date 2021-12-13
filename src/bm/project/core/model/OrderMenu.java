@@ -27,10 +27,10 @@ public class OrderMenu {
 
 
     /**
-     * Instantiates a new Order menu.
+     * 생성자
      *
-     * @param menu  the menu
-     * @param count the count
+     * @param menu  메뉴
+     * @param count 주문할 메뉴 수
      */
     public OrderMenu(Menu menu, int count){
         this.Menu = menu;
@@ -39,7 +39,7 @@ public class OrderMenu {
     }
 
     /**
-     * Complete order menu.
+     * 메뉴 완성 여부
      */
     public void completeOrderMenu(){
         isMenuCompleted = true;

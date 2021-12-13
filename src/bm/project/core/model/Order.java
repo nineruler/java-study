@@ -11,38 +11,38 @@ import java.time.format.DateTimeFormatter;
  */
 public class Order {
     /**
-     * The Order no.
+     * 주문 번호
      */
     public int OrderNo;
     /**
-     * The Order menus.
+     * 주문 메뉴 리스트
      */
     public List<OrderMenu> OrderMenus;
     /**
-     * The Order date.
+     * 주문 날짜
      */
     public LocalDateTime OrderDate;
     /**
-     * The Is menu completed.
+     * 메뉴 완성 여부
      */
     public boolean isMenuCompleted = false;
     /**
-     * The Is serving completed.
+     * 서빙 완료 여부
      */
     public boolean isServingCompleted = false;
 
     /**
-     * Instantiates a new Order.
+     * 생성자
      */
     public Order(){
         OrderMenus =  new ArrayList<>();
     }
 
     /**
-     * Instantiates a new Order.
+     * 생성자
      *
-     * @param orderMenus the order menus
-     * @param orderNo    the order no
+     * @param orderMenus 주문 메뉴 리스트
+     * @param orderNo    주문 번호
      */
     public Order(List<OrderMenu> orderMenus, int orderNo) {
         this.OrderNo = orderNo;
@@ -51,9 +51,9 @@ public class Order {
     }
 
     /**
-     * Gets order completed.
+     * 주문 완성여부 가져오기
      *
-     * @return the order completed
+     * @return 주문 완성여부
      */
     public boolean getOrderCompleted() {
         for(OrderMenu menu : OrderMenus){

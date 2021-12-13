@@ -8,24 +8,24 @@ import java.util.List;
  */
 public class Table {
     /**
-     * The Table no.
+     * 테이블 번호
      */
     public int TableNo;
     /**
-     * The Orders.
+     * 주문내역
      */
     public List<Order> Orders; //주문번호, 메뉴, 주문시간
 
     /**
-     * Instantiates a new Table.
+     * 생성자
      */
     public Table(){ }
 
     /**
-     * Instantiates a new Table.
+     * 생성자
      *
-     * @param tableNo the table no
-     * @param orders  the orders
+     * @param tableNo 테이블 번호
+     * @param orders  주문내역
      */
     public Table(int tableNo, List<Order> orders){
         this.TableNo = tableNo;
