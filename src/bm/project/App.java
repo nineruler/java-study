@@ -17,18 +17,18 @@ public class App {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-        Scanner stdIn = new Scanner(System.in);
-        Numbering numbering = new Numbering();
 
         while (true) {
-            System.out.print("번호입력 : ");
             try {
+                Scanner stdIn = new Scanner(System.in);
+                System.out.print("번호입력 : ");
                 int n = stdIn.nextInt();
+                Numbering numbering = new Numbering(n);
                 if(n == 0) break;
-                numbering.run(n);
+                numbering.start();
             } catch (InputMismatchException e) {
                 System.out.println("N");
-                break;
+                return;                             //종료
             }
         }
 //        //새마을식당
